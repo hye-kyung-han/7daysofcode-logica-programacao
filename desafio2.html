@@ -1,1 +1,25 @@
-desafio2.html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio 7 Days Of Code - Dia 2</title>
+</head>
+<script>
+    function mostra(texto) {
+        document.write(texto);
+        document.write("<br><br>");
+    }
+    var usuario = prompt("Qual o seu nome?");
+    var anos = prompt("Quantos anos você tem?");
+    var linguagemProgramacao = prompt("Qual linguagem de programação você está estudando?");
+    mostra("Olá " + usuario + ", você tem " + anos + " anos e já está aprendendo " + linguagemProgramacao + "!");
+    var pergunta = prompt("Você gosta de estudar " + linguagemProgramacao + "? Responda com o número 1 para SIM ou 2 para NÃO.");
+    
+    if(pergunta == 1) {
+        mostra("Muito bom! Continue estudando e você terá muito sucesso.");
+    }
+    if(pergunta == 2) {
+        mostra("Ahh que pena... Já tentou aprender outras linguagens?");
+    }
+</script>
+</html>
