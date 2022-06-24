@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio 7 Days Of Code - Dia 4</title>
+</head>
+<script>
+    var numeroSorteado = sorteiaNumero();
+    var contador = 0;
+    var limiteTentativas = 3;
+
+    function sorteiaNumero() {
+        numeroAleatorio = Math.round(Math.random() * 10);
+        
+        while(numeroAleatorio == 0){
+            numeroAleatorio = Math.round(Math.random() * 10);
+        }
+        return numeroSorteado = numeroAleatorio;
+    }
+
+    console.log(numeroSorteado);
+
+    function adivinha(){
+        numero = prompt("Adivinhe de 1 a 10 em qual número estou pensando...");
+    }
+    
+    while(contador < limiteTentativas){
+        adivinha();
+
+        if(numero == numeroSorteado){
+            document.write("Parabéns! Você acertou. Aperte a tecla F5 para jogar novamente :)");
+            endloop;
+        } else if(contador == (limiteTentativas - 1)){
+            alert("Ihh! Acabou as tentativas.");
+        } else {
+            alert("Resposta errada! Você tem mais " + (limiteTentativas - contador - 1) + " tentativas!");
+        }
+        contador++;
+    }
+
+    if(numero != numeroSorteado && contador == limiteTentativas){
+        document.write("Você usou todas as tentativas, aperte a tecla F5 para jogar novamente.");
+    }
+   
+</script>
+</html>
