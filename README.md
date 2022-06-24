@@ -44,3 +44,19 @@ Se **NÃO**, o programa imprime isso:
 ```
 Ahh que pena... Já tentou aprender outras linguagens?
 ```
+
+## Dia 3:
+
+- Desenvolver um programa que cria perguntas/respostas diferentes dependendo da resposta do usuário;
+- Adicionar uma pergunta que repete de acordo com a quantidade de respostas que o usuário quiser informar;
+
+Perguntas que o programa faz:
+```
+1. Se quer seguir para área de Front-End ou seguir para a área de Back-End.
+
+2. Caso esteja na área de Front-End, se quer aprender React ou aprender Vue. Caso esteja na área de Back-End, poderá aprender C# ou aprender Java.
+
+3. Depois, independente das escolhas anteriores, o usuário poderá escolher entre seguir se especializando na área escolhida ou seguir se desenvolvendo para se tornar Fullstack. Você deve exibir na tela uma mensagem específica para cada escolha.
+
+4. Por fim, pergunte quais são as tecnologias nas quais a pessoa gostaria de se especializar ou de conhecer. Aqui, a pessoa pode responder N tecnologias, uma de cada vez. Então, enquanto ela continuar respondendo ok para a pergunta: “Tem mais alguma tecnologia que você gostaria de aprender?”, continue apresentando para ela o Prompt, para que ela complete o nome da tecnologia em questão. E, logo depois, apresente uma mensagem comentando algo sobre a linguagem inserida.
+```
