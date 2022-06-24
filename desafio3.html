@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio 7 Days Of Code - Dia 3</title>
+</head>
+<script>
+    
+    const usuario = prompt("Nos informe o seu nome");
+
+    const respostaFrontOuBack = prompt("Olá " + usuario + ", digite 1 se você gostaria de seguir para a área de Front-End ou digite 2 se você gostaria de seguir para a área de Back-End?");
+
+    if(respostaFrontOuBack == "1") {
+        reactOuVue = prompt( "Front-End! Que legal! Sendo assim você prefere aprender React ou aprender Vue?");
+    } else if(respostaFrontOuBack == "2") {
+        cOuJava = prompt( "Back-End! Que legal! Sendo assim você prefere aprender C# ou aprender Java?");
+
+    } else {
+        alert("Você não digitou uma resposta válida!");
+        document.write("Atualize a página e comece novamente.")
+        endloop;
+    }
+
+    if(respostaFrontOuBack == "1"){
+        respostaEspecializarOuFullstack = prompt("Se você pretende seguir se especializando na área de Front-End digite 1 ou se você pretende seguir se desenvolvendo para se tornar Fullstack digite 2.");
+    }
+    if(respostaFrontOuBack == "2"){
+        respostaEspecializarOuFullstack = prompt("Se você pretende seguir se especializando na área de Back-End digite 1 ou se você pretende seguir se desenvolvendo para se tornar Fullstack digite 2.");
+    }
+
+    if(respostaFrontOuBack == "1" && respostaEspecializarOuFullstack == "1"){
+        alert("Ótimo! você escolheu se especializar na área de Front-End, então é só continuar estudando e se aprimorando!");
+    } else if(respostaFrontOuBack == "2" && respostaEspecializarOuFullstack == "1"){
+        alert("Ótimo! você escolheu se especializar na área de Back-End, então é só continuar estudando e se aprimorando!");
+    } else if(respostaFrontOuBack == "1" && respostaEspecializarOuFullstack == "2"){
+        alert("Legal! você escolheu continuar se desenvolvendo para se tornar Fullstack, você terá que continuar estudando Front-End e aprender um pouco da área de Back-End também, mas está no caminho certo!")
+    } else if(respostaFrontOuBack == "2" && respostaEspecializarOuFullstack == "2"){
+        alert("Legal! você escolheu continuar se desenvolvendo para se tornar Fullstack, você terá que continuar estudando Back-End e aprender um pouco da área de Front-End também, mas está no caminho certo!")
+    } else {
+        alert("Você não digitou uma resposta válida!");
+        document.write("Atualize a página e comece novamente.")
+        endloop;
+    }
+
+    let repete = false;
+
+    function repetePergunta() {
+        repete = prompt("Tem mais alguma outra tecnologia que gostaria de aprender? Digite 1 se quiser acrescentar mais uma tecnologia ou digite 2 se não tiver.");
+    }
+    
+    let listaTecnologias = [];
+
+    let i = 0;
+
+    while(i <= listaTecnologias.length){
+
+        tecnologia = prompt("Agora, nos fale qual outra tecnologia você gostaria de conhecer/estudar?");
+        listaTecnologias.push(tecnologia);
+        repetePergunta();
+        i++;
+
+
+        if(repete == "2"){
+            i = listaTecnologias.length + 1;
+        }
+    }
+
+    document.write("Olá " + usuario + "! <br> Imprimimos um resumo com as tecnologias que vc nos informou: <br>" + listaTecnologias);
+
+</script>
+</html>
