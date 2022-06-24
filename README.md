@@ -60,3 +60,23 @@ Perguntas que o programa faz:
 
 4. Por fim, pergunte quais são as tecnologias nas quais a pessoa gostaria de se especializar ou de conhecer. Aqui, a pessoa pode responder N tecnologias, uma de cada vez. Então, enquanto ela continuar respondendo ok para a pergunta: “Tem mais alguma tecnologia que você gostaria de aprender?”, continue apresentando para ela o Prompt, para que ela complete o nome da tecnologia em questão. E, logo depois, apresente uma mensagem comentando algo sobre a linguagem inserida.
 ```
+
+## Dia 4:
+
+- Desenvolver um programa de adivinha com interação do usuário;
+- o programa deve escolher um número aleatoriamente de 1 a 10;
+
+Perguntas e respostas que o programa faz:
+```
+[Pergunta inicial]
+"Adivinhe de 1 a 10 em qual número estou pensando..."
+
+[Quando o usuário acerta]
+"Parabéns! Você acertou. Aperte a tecla F5 para jogar novamente :)"
+
+[Quando acabam as 3 tentativas]
+"Ihh! Acabou as tentativas."
+
+[Se você errar todas as tentativas]
+"Você usou todas as tentativas, aperte a tecla F5 para jogar novamente."
+```
