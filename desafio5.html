@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio 7 Days Of Code - Dia 5</title>
+</head>
+<script>
+    let frutas = [];
+    let laticinios = [];
+    let congelados = [];
+    let doces = [];
+    let listaStringsCategorias = ["frutas", "laticinios", "congelados", "doces"];
+    let listaVarCategorias = [frutas, laticinios, congelados, doces]; 
+
+    let resposta = prompt("Você deseja adicionar um item na sua lista de compras? digite SIM ou NÃO");
+    
+    function perguntas() {
+        let item = prompt("Digite o nome do item. Exemplo: batata");
+        let categoria = prompt("Em qual categoria este item se encaixa? Temos estas opções: frutas, laticinios, congelados, doces");
+
+        for(let i = 0; i < listaVarCategorias.length; i++){
+            
+            if(categoria == listaStringsCategorias[i]){
+                listaVarCategorias[i].push(item);
+            }
+        }
+    }
+
+    if(resposta.toLowerCase() == "sim"){
+        
+        perguntas();
+
+        let repete = 0;
+        while(repete < 1){
+            let perguntaNovamente = prompt("Você gostaria de adicionar mais um item a lista? Digite SIM ou NÃO.");
+
+            if(perguntaNovamente.toLowerCase() == "sim") {
+                perguntas();
+            } else if(perguntaNovamente.toLowerCase() == "não"){
+                document.write("Imprimimos a sua lista de compras abaixo <br>"
+                + "<br>Lista de compras: <br>"
+                + "<br>Frutas: " + frutas
+                + "<br>Laticínios: " + laticinios
+                + "<br>Congelados: " + congelados
+                + "<br>Doces: " + doces
+                );
+                repete++;
+            }
+        }
+        
+
+    } else if(resposta.toLowerCase() == "não"){
+        document.write("Ok. Nenhum item foi adicionado na lista, se mudar de ideia é só atualizar a página.");
+    } else {
+        alert("Você não digitou uma resposta válida!");
+        document.write("Atualize a página e tente novamente.")
+    }
+
+</script>
+</html>
