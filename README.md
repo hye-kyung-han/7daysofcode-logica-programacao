@@ -80,3 +80,21 @@ Perguntas e respostas que o programa faz:
 [Se você errar todas as tentativas]
 "Você usou todas as tentativas, aperte a tecla F5 para jogar novamente."
 ```
+
+## Dia 5:
+
+- Desenvolver um programa em que o usuário possa adicionar items da lista de compras;
+- A cada item adicionado, o programa deve perguntar para o usuário qual das categorias existentes ele se encaixa para organizar a lista;
+- No final o programa imprime a lista de compras organizadas pela categoria;
+
+O programa deverá imprimir a seguinte mensagem, por exemplo:
+```
+Imprimimos a sua lista de compras abaixo
+
+Lista de compras:
+
+Frutas: banana,abacaxi,maça
+Laticínios: yogurte
+Congelados: frango,carne
+Doces: chocolate,doce de leite
+```
