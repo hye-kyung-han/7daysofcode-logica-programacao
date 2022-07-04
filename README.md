@@ -98,3 +98,19 @@ Laticínios: yogurte
 Congelados: frango,carne
 Doces: chocolate,doce de leite
 ```
+
+## Dia 6:
+
+- Adicionar ferramenta nova de remover itens que foram adicionadas na lista;
+- A mensagem de remover deve aparecer apenas quando houver algum item já adicionado na lista e não aparecer quando estiver vazia;
+- Notificar o usuário quando o item que ele deseja remover não existe na lista;
+
+Quando o item é removido, é imprimido em loop a seguinte mensagem enquanto continuar sendo respondido com "sim" pelo usuário:
+```
+Item removido com sucesso! Segue a lista atual: [listaVarCategorias]. Deseja remover outro item da lista? Digite SIM ou NÃO."
+```
+
+E quando o usuário digita um item não existente, o programa avisa com a seguinte mensagem:
+```
+Não existe esse item na lista!
+```
