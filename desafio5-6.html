@@ -5,18 +5,22 @@
     <title>Desafio 7 Days Of Code - Dias 5 e 6</title>
 </head>
 <script>
+    
     let frutas = [];
     let laticinios = [];
     let congelados = [];
     let doces = [];
     let listaStringsCategorias = ["frutas", "laticinios", "congelados", "doces"];
     let listaVarCategorias = [frutas, laticinios, congelados, doces]; 
+    let item;
+    let categoria;
 
-    let resposta = prompt("Você deseja adicionar um item na sua lista de compras? digite SIM ou NÃO");
-    
-    function perguntas() {
-        let item = prompt("Digite o nome do item. Exemplo: batata");
-        let categoria = prompt("Em qual categoria este item se encaixa? Temos estas opções: frutas, laticinios, congelados, doces");
+    function perguntaItem() {
+        item = prompt("Digite o nome do item. Exemplo: batata");
+    }
+
+    function perguntaCategoria() {
+        categoria = prompt("Em qual categoria este item se encaixa? Temos estas opções: frutas, laticinios, congelados, doces");
 
         for(let i = 0; i < listaVarCategorias.length; i++){
             
@@ -26,34 +30,85 @@
         }
     }
 
-    if(resposta.toLowerCase() == "sim"){
-        
-        perguntas();
+    function imprimeLista() {
+        document.write("Imprimimos a sua lista de compras abaixo <br>"
+        + "<br>Lista de compras: <br>"
+        + "<br>Frutas: " + frutas
+        + "<br>Laticínios: " + laticinios
+        + "<br>Congelados: " + congelados
+        + "<br>Doces: " + doces
+        );
+    }
+
+    function checaItemDaLista(){
+                for(let i = 0; i < listaVarCategorias.length; i++){
+                    if(item == frutas[i] || item == laticinios[i] || item == congelados [i] || item == doces){
+                        let achouItemDaLista = true;
+                    }
+                }
+    }
+
+    function removeItemLista() {
+        let remover = prompt("Segue a lista dos itens adicionados até agora: " + frutas + laticinios + congelados + doces + ". Se você deseja remover algum deles, digite SIM ou caso não queira, digite NÃO.");
+
+        if(remover.toLowerCase() == "sim"){
+            item = prompt("Digite o nome do item que você deseja remover.");
+
+            for(let i = 0; i < listaVarCategorias.length; i++){
+            
+            checaItemDaLista();
+
+            if(achouItemDaLista == true){
+                listaVarCategorias[i].indexOf(item);
+                return remover = prompt("Item removido com sucesso! Deseja remover outro item da lista? Digite SIM ou NÃO.");
+            } else{
+                alert("Não existe esse item na lista!");
+            }
+    
+        } else if(remover.toLowerCase() == "não"){
+            imprimeLista();
+        }
+
+        }
+    }
+    function adicionaItemExtra() {
 
         let repete = 0;
+
         while(repete < 1){
             let perguntaNovamente = prompt("Você gostaria de adicionar mais um item a lista? Digite SIM ou NÃO.");
-
             if(perguntaNovamente.toLowerCase() == "sim") {
-                perguntas();
+                perguntaItem();
+                perguntaCategoria();
             } else if(perguntaNovamente.toLowerCase() == "não"){
-                document.write("Imprimimos a sua lista de compras abaixo <br>"
-                + "<br>Lista de compras: <br>"
-                + "<br>Frutas: " + frutas
-                + "<br>Laticínios: " + laticinios
-                + "<br>Congelados: " + congelados
-                + "<br>Doces: " + doces
-                );
+                removeItemLista();
+                
                 repete++;
             }
         }
-        
+    }
 
-    } else if(resposta.toLowerCase() == "não"){
+    function checaLista(alimento) {
+        if(frutas.length == 0 && laticinios.length == 0 && congelados.length == 0 && doces.length == 0){ 
+            console.log("lista vazia!!!");  
+        }else{
+            console.log("tem item na lista!!!");
+        }
+    }
+    
+    checaLista();
+
+    let perguntaInicial = prompt("Você deseja adicionar um item na sua lista de compras? digite SIM ou NÃO");
+
+    if(perguntaInicial.toLowerCase() == "sim"){     
+        perguntaItem();
+        perguntaCategoria();
+        adicionaItemExtra();
+    } else if(perguntaInicial.toLowerCase() == "não"){
         document.write("Ok. Nenhum item foi adicionado na lista, se mudar de ideia é só atualizar a página.");
     } else {
         alert("Você não digitou uma resposta válida!");
-        document.write("Atualize a página e tente novamente.")
+        document.write("Atualize a página e tente novamente.");
     }
 
 </script>
