@@ -14,6 +14,7 @@
     let listaVarCategorias = [frutas, laticinios, congelados, doces]; 
     let item;
     let categoria;
+    let removerItem;
 
     function perguntaItem() {
         item = prompt("Digite o nome do item. Exemplo: batata");
@@ -40,27 +41,54 @@
         );
     }
 
+    let achouItemDaLista = false;
+
     function checaItemDaLista(){
-                for(let i = 0; i < listaVarCategorias.length; i++){
-                    if(item == frutas[i] || item == laticinios[i] || item == congelados [i] || item == doces){
-                        let achouItemDaLista = true;
-                    }
-                }
+        for(let checagens = 0; checagens < listaVarCategorias.length; checagens++){
+            if(removerItem == frutas[checagens] || removerItem == laticinios[checagens] || removerItem == congelados[checagens] || removerItem == doces[checagens]){
+                achouItemDaLista = true;
+            }
+        }
+    }
+
+    let remover;
+    let removerNovamente = "sim";
+
+    function removeItem() {
+        let posicaoNaLista;
+        if(frutas.indexOf(removerItem) != -1) {
+            posicaoNaLista = frutas.indexOf(removerItem);
+            frutas.splice(posicaoNaLista,1);
+        } else if(laticinios.indexOf(removerItem) != -1) {
+            posicaoNaLista = laticinios.indexOf(removerItem);
+            laticinios.splice(posicaoNaLista,1);
+        } else if(congelados.indexOf(removerItem) != -1) {
+            posicaoNaLista = congelados.indexOf(removerItem);
+            congelados.splice(posicaoNaLista,1);
+        } else if(doces.indexOf(removerItem) != -1) {
+            posicaoNaLista = doces.indexOf(removerItem);
+            doces.splice(posicaoNaLista,1);
+        }
+            
+        
+    }
+
+    function perguntaRemoveItemLista() {
+        remover = prompt("Segue a lista dos itens adicionados até agora: " + listaVarCategorias + ". Se você deseja remover algum deles, digite SIM ou caso não queira, digite NÃO.");
     }
 
     function removeItemLista() {
-        let remover = prompt("Segue a lista dos itens adicionados até agora: " + frutas + laticinios + congelados + doces + ". Se você deseja remover algum deles, digite SIM ou caso não queira, digite NÃO.");
 
         if(remover.toLowerCase() == "sim"){
-            item = prompt("Digite o nome do item que você deseja remover.");
-
-            for(let i = 0; i < listaVarCategorias.length; i++){
-            
+            removerItem = prompt("Digite o nome do item que você deseja remover.");
             checaItemDaLista();
-
+            
             if(achouItemDaLista == true){
-                listaVarCategorias[i].indexOf(item);
-                return remover = prompt("Item removido com sucesso! Deseja remover outro item da lista? Digite SIM ou NÃO.");
+                removeItem();
+                while(removerNovamente == "sim") {
+                    removeItemExtra();
+                }
+                
             } else{
                 alert("Não existe esse item na lista!");
             }
@@ -68,9 +96,26 @@
         } else if(remover.toLowerCase() == "não"){
             imprimeLista();
         }
-
-        }
+        
     }
+
+    function removeItemExtra() {
+        removerNovamente = prompt("Item removido com sucesso! Segue a lista atual:" + listaVarCategorias + ". Deseja remover outro item da lista? Digite SIM ou NÃO.");
+        if(removerNovamente.toLowerCase() == "sim") {
+            removerItem = prompt("Digite o nome do item que você deseja remover.");
+            checaItemDaLista();
+            
+            if(achouItemDaLista == true){
+                removeItem();
+            } else{
+                alert("Não existe esse item na lista!");
+            }
+        } else if(removerNovamente.toLowerCase() == "não") {
+            imprimeLista();
+        }
+        
+    }
+    
     function adicionaItemExtra() {
 
         let repete = 0;
@@ -81,8 +126,8 @@
                 perguntaItem();
                 perguntaCategoria();
             } else if(perguntaNovamente.toLowerCase() == "não"){
+                perguntaRemoveItemLista();
                 removeItemLista();
-                
                 repete++;
             }
         }
