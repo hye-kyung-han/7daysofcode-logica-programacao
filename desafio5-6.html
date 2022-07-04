@@ -69,8 +69,6 @@
             posicaoNaLista = doces.indexOf(removerItem);
             doces.splice(posicaoNaLista,1);
         }
-            
-        
     }
 
     function perguntaRemoveItemLista() {
@@ -78,7 +76,6 @@
     }
 
     function removeItemLista() {
-
         if(remover.toLowerCase() == "sim"){
             removerItem = prompt("Digite o nome do item que você deseja remover.");
             checaItemDaLista();
@@ -88,15 +85,12 @@
                 while(removerNovamente == "sim") {
                     removeItemExtra();
                 }
-                
             } else{
                 alert("Não existe esse item na lista!");
             }
-    
         } else if(remover.toLowerCase() == "não"){
             imprimeLista();
         }
-        
     }
 
     function removeItemExtra() {
@@ -113,15 +107,14 @@
         } else if(removerNovamente.toLowerCase() == "não") {
             imprimeLista();
         }
-        
     }
     
     function adicionaItemExtra() {
-
         let repete = 0;
 
         while(repete < 1){
             let perguntaNovamente = prompt("Você gostaria de adicionar mais um item a lista? Digite SIM ou NÃO.");
+            
             if(perguntaNovamente.toLowerCase() == "sim") {
                 perguntaItem();
                 perguntaCategoria();
@@ -132,16 +125,6 @@
             }
         }
     }
-
-    function checaLista(alimento) {
-        if(frutas.length == 0 && laticinios.length == 0 && congelados.length == 0 && doces.length == 0){ 
-            console.log("lista vazia!!!");  
-        }else{
-            console.log("tem item na lista!!!");
-        }
-    }
-    
-    checaLista();
 
     let perguntaInicial = prompt("Você deseja adicionar um item na sua lista de compras? digite SIM ou NÃO");
 
